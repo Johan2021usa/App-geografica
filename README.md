@@ -38,4 +38,21 @@ Como resultado, el analisis indica que:
 
 # 2.SQL/Bases de datos geograficas
 
+Para el siguiente punto se importó el shapefile de consulorios de pediatria, la anterior capa generada con ArcGis la cual contenia los valores de Consultorios por localidad y la informacion del shape de localidades a través de PostgreSQL y PostGist, a todas las capas se les definió un SRID 4326 correspondiente a un sistema de cordenadas WGS 84, importante al momento de analizar coordenadas con PosgreSQL.
+
+![alt text](images/08.png)
+
+Posteriormente, se verifico la creacion de las tablas en PostgreSQL a traves de un select:
+
+![alt text](images/09.png)
+
+2.1 Una vez importados los datos, se procede a realizar consultas con la finalidad de conocer la mayor concentracion de consultorios de pediatria a partir de las localidades de Bogota DC. Para ello, se utilizóun script SQL basado en el metodo "ST_Within()" el cual nos permite realizar un spatial join similar a lo realizado durante el primer punto.
+
+![alt text](images/10.png)
+
+Y como resultado se obtuvo un listado con la cantidad de consultorios de pediatria por cada localidad de Bogota, siendo Usaquen y Suba las localidades con la mayor cantidad (47) y Sumapaz con la menor cantidad de consultorios (0).
+
+![alt text](images/11.png)
+
+2.2 Los anteriores resultados muestran una correlacion con la cantidad de habitantes por localidad, ya que segun los datos de DANE la proyeccion para el año 2024 es de 594.611 habitantess en la localidad de Usaquen y 1.313.453 habitantes para la localidad de Suba. Asi mismo, para la menor proyeccion la presenta Sumapaz con 3.926 habitantes, fuente: https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion/proyecciones-de-poblacion-bogota
 
