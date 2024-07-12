@@ -1,13 +1,19 @@
-# PRUEBA TECNICA REALTIX
+# APP GEOGRAFICA
 
-Esta prueba fue subida a GITHUB para detallar el proceso de analisis y desarrollo del software solicitado, por favor descargar el repositirio y verificar la informacion de cada punto. 
+El presente proyecto se conforma de 3 puntos/aspectos principales, entre los cuales se encuentran analizar datos geograficos con el uso de tecnologias GIS, como tambien desarrollar una aplicacion web que permita visualizar las ubicaciones de consultorios de pediatria en Bogotá DC a traves del desarrollo de una API Rest y la integracion y conusmo de Google Maps API con una aplicacion. 
 
 - Link del repositorio: https://github.com/Johan2021usa/Realtix-prueba-tecnica.git
 
 - Desarrollador: Jairo Johan Lasso Chaucanes
 
+# Tecnologias / Ejecución del proyecto
+- GIS: ArcGIS 10.5, QGIS, PostGIS.
+- Back-end: PostgreSQL, NPM 10.1.0 Node 20.9.0, Express 4.19.2, PG, PG-hostore, Sequelize 6.37.3, Cors.
+- Front-end: JavaScript, HTML5, CSS3, GOOGLE MAPS API (Maps JavaScript API), BEM CSS methodology.
+- Arquitectura: API rest, MVC.
+
 # 1. Analisis de datos geograficos
-El primer punto de la prueba sobre se realizó utilizando ARCGIS 10.5, los datos en formato shape de los consultorios de pediatria se descargaron de la fuente señalada (IDECA) y las capas adicionales de las localidades del distrito capital de Bogota de la fuente: Datos Abiertos Bogota. Adicionalmente se agregó un base map y un data frame sobre el limite de Bogota. 
+El primer punto del proyecto se realizó utilizando ARCGIS 10.5, los datos en formato shape de los consultorios de pediatria se descargaron de la fuente señalada (IDECA) y las capas adicionales de las localidades del distrito capital de Bogota de la fuente: Datos Abiertos Bogota. Adicionalmente se agregó un base map y un data frame sobre el limite de Bogota. 
 
 1.1 Al importar los shape en ArcGis se pudo visualizar de manera general que los consultorios de pediatria se localizan mayoritariamente en el area urbana. 
 
@@ -55,4 +61,22 @@ Y como resultado se obtuvo un listado con la cantidad de consultorios de pediatr
 ![alt text](images/11.png)
 
 2.2 Los anteriores resultados muestran una correlacion con la cantidad de habitantes por localidad, ya que segun los datos de DANE la proyeccion para el año 2024 es de 594.611 habitantess en la localidad de Usaquen y 1.313.453 habitantes para la localidad de Suba. Asi mismo, para la menor proyeccion la presenta Sumapaz con 3.926 habitantes, fuente: https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion/proyecciones-de-poblacion-bogota
+
+# 3. Ejecución Del Proyecto
+La ejecución del projecto en un entorno local se divide en dos elementos:
+
+1.1 Ejecución del API rest: Asegurese de tener instalado PostgreSQL, la version 20.9.0 o una version superior de Node y tambien NPM para la gestion de librerias adicionales, posteriormente a traves de consola ingrese al folder "api-geografica" y ejecute el siguientes comando:
+- npm run dev
+
+![alt text](images/12.png)
+
+2.2 Ejecución del front-end: Es importante que establezca un API key dentro del script localizado en index.html, para ello genere una en Google Cloud Platform y habilite el Maps JavaScript API.
+Posteriormente, utilice live server para desplegar un servidor local y ejecutar el index.html con la opcion Go Live, luego copie la direccion que genera Live Server y establezcala en las restricciones de sitios web en las configuraciones de credenciales / Apis y servicios de Google Maps Api.
+
+Una vez realizados los anteriores dos pasos, el proyecto funcionará correctamente. 
+
+![alt text](images/App%20Geografica.jpg)
+
+
+
 

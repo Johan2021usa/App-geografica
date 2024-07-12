@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS files -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- FONTS GOOGLE API-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <!--Tittle -->
+    <title>App Geografica</title>
+    <link rel="icon" type="image/jpg" href="img/tittle__font.png">
+    <meta name="description" content="Esta aplicacion le permite visualizar la ubicacion de consultorios pediatricos en la ciudad de Bogota">
+</head>
+<body>
+    <header class="header">
+        <section class="tittle">
+            <img class="tittle__icon" src="img/tittle__font.png">
+            <h1 class="title__font">App Geografica</h1>
+        </section>
+        <section class="menu"></section>
+    </header>
+    <main>
+
+        <!--MAP CONTAINER-->
+        <gmp-map class="map-google"
+        center="4.627057817,-74.069200153"
+        zoom="11"
+        map-id="DEMO_MAP_ID">
+            <!-- Here advanced markers -->
+        </gmp-map>
+
+        <!-- FORM POST / UPDATE-->
+        <form class="form-post" action="/submit_clinic_info" method="post" data-form>
+            <label class="form-post__label" for="identificacion">Identificación:</label>
+            <input class="form-post__input" type="text" id="identificacion" name="identificacion" required>
+            
+            <label class="form-post__label" for="codigo_consultorio">Código de Consultorio:</label>
+            <input class="form-post__input" type="text" id="codigo_consultorio" name="codigo_consultorio" required>
+            
+            <label class="form-post__label" for="nombre_consultorio">Nombre de Consultorio:</label>
+            <input class="form-post__input" type="text" id="nombre_consultorio" name="nombre_consultorio" required>
+            
+            <label class="form-post__label" for="nombre_servicio">Nombre Servicio:</label>
+            <input class="form-post__input" type="text" id="nombre_servicio" name="nombre_servicio" required>
+            
+            <label class="form-post__label" for="telefono">Teléfono:</label>
+            <input class="form-post__input" type="tel" id="telefono" name="telefono" required>
+            
+            <label class="form-post__label" for="direccion">Dirección:</label>
+            <input class="form-post__input" type="text" id="direccion" name="direccion" required>
+            
+            <label class="form-post__label" for="correo_electronico">Correo Electrónico:</label>
+            <input class="form-post__input" type="email" id="correo_electronico" name="correo_electronico" required>
+            
+            <label class="form-post__label" for="tipo_institucion">Tipo de Institución:</label>
+            <input class="form-post__input" type="text" id="tipo_institucion" name="tipo_institucion" required>
+            
+            <label class="form-post__label" for="clase_servicio">Clase de Servicio:</label>
+            <input class="form-post__input" type="text" id="clase_servicio" name="clase_servicio" required>
+            
+            <label class="form-post__label" for="codigo_localidad">Código Localidad:</label>
+            <input class="form-post__input" type="text" id="codigo_localidad" name="codigo_localidad" required>
+            
+            <label class="form-post__label form-post__label---long-width" for="codigo_upz">Código UPZ:</label>
+            <input class="form-post__input form-post__input---long-width" type="text" id="codigo_upz" name="codigo_upz" required>
+            
+            <label class="form-post__label form-post__label---long-width" for="latitud">Coordenada Latitud:</label>
+            <input class="form-post__input form-post__input---long-width" type="text" id="latitud" name="latitud" required>
+            
+            <label class="form-post__label form-post__label---long-width" for="longitud">Coordenada Longitud:</label>
+            <input class="form-post__input form-post__input---long-width" type="text" id="longitud" name="longitud" required>
+            
+            <input class="form-post__button" type="submit" value="Submit">
+            <input class="form-post__button" type="button" value="update">
+        </form>
+    </main>
+    <footer>
+
+    </footer>    
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=here-your-Api-key&loading=async&libraries=maps,marker&v=beta" defer>
+    </script>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
